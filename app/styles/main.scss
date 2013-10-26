@@ -1,0 +1,63 @@
+@import "bootstrap-sass/lib/bootstrap";
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+.teaser {
+  margin: 3px auto 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.participants {
+  width: 60%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th.participant_name {
+  width: 40%;
+  font-size: 16px;
+}
+
+.add_participants {
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
+  input {
+    width: 200px;
+  }
+}
+
+.start_pairing {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
