@@ -22,6 +22,7 @@ angular.module('pairingbingoApp')
     };
 
     $scope.pairIt = function(){
+      $scope.pairs.length = 0;
       for(var i=0;i<$scope.participants.length;i+=2){
         $scope.pairs.push($scope.participants.slice(i, i+2));
       }

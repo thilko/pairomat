@@ -29,4 +29,13 @@ describe('Controller: MainCtrl', function () {
 
     expect(scope.pairs).toEqual([["harry", "manfred"]]);
   });
+
+
+  it('creates new pairs every time', function() {
+    scope.participants = ["harry", "manfred"];
+    scope.pairIt();
+    scope.pairIt();
+
+    expect(scope.pairs.length).toBe(1);
+  });
 });
