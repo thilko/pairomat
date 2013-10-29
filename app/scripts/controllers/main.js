@@ -10,12 +10,6 @@ angular.module('pairingbingoApp')
       $scope.pairIt();
     };
 
-    function lonesomeCowboyExist() {
-      return _.find($scope.participants, function(entry){
-        return entry[1] == undefined;
-      });
-    }
-
     $scope.playBingo = function(){
       $scope.participants = _.shuffle($scope.participants);
       $scope.pairIt();
