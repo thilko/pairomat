@@ -15,8 +15,11 @@ describe('Controller: MainCtrl', function () {
       $scope: scope
     });
   }));
+  
+  it('add the participants', function () {
+    scope.participant = "test";
+    scope.addPairingPartner();
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+    expect(scope.participants.length).toBe(1);
   });
 });
