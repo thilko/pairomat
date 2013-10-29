@@ -3,17 +3,11 @@
 angular.module('pairingbingoApp')
   .controller('MainCtrl', function ($scope) {
     $scope.participants = [];
+    $scope.pairs = [];
 
     $scope.addPairingPartner = function(){
-      var name = $scope.participant;
-      if(_.isUndefined(name) || name == "")
-        return;
-
-      if(_.isEmpty($scope.participants) || !lonesomeCowboyExist()) {
-        $scope.participants.push([name]);
-      } else {
-        _.last($scope.participants)[1] = name;
-      }
+      $scope.participants.push($scope.participant);
+      $scope.pairIt();
     };
 
     function lonesomeCowboyExist() {
@@ -23,19 +17,18 @@ angular.module('pairingbingoApp')
     }
 
     $scope.playBingo = function(){
-      var shuffledArray = _.shuffle(_.flatten($scope.participants));
-      pairIt(shuffledArray);
+      $scope.participants = _.shuffle($scope.participants);
+      $scope.pairIt();
     };
 
-    function pairIt(participants){
-      $scope.participants.length = 0;
-      for(var i=0;i<participants.length;i+=2){
-        $scope.participants.push(participants.slice(i, i+2));
+    $scope.pairIt = function(){
+      for(var i=0;i<$scope.participants.length;i+=2){
+        $scope.pairs.push($scope.participants.slice(i, i+2));
       }
     }
 
     $scope.removeParticipant = function(name){
-      var withoutParticipant = _.without(_.flatten($scope.participants), name);
-      pairIt(withoutParticipant);
+      var withoutParticipant = _.without($scope.participants, name);
+      $scope.pairIt();
     };
 });

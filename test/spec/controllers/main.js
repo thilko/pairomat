@@ -22,4 +22,11 @@ describe('Controller: MainCtrl', function () {
 
     expect(scope.participants.length).toBe(1);
   });
+
+  it('creates a pair with two participants', function() {
+    scope.participants = ["harry", "manfred"];
+    scope.pairIt();
+
+    expect(scope.pairs).toEqual([["harry", "manfred"]]);
+  });
 });
