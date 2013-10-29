@@ -29,7 +29,7 @@ angular.module('pairingbingoApp')
     }
 
     $scope.removeParticipant = function(name){
-      var withoutParticipant = _.without($scope.participants, name);
+      $scope.participants = _.without($scope.participants, name);
       $scope.pairIt();
     };
 });

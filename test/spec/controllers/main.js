@@ -38,4 +38,11 @@ describe('Controller: MainCtrl', function () {
 
     expect(scope.pairs.length).toBe(1);
   });
+
+  it('removes a participant', function() {
+    scope.participants = ["harry", "manfred"];
+    scope.removeParticipant("harry");
+
+    expect(scope.participants.length).toBe(1);
+  });
 });
