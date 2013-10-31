@@ -17,10 +17,17 @@ html, body {
   margin-left: auto;
   margin-right: auto;
 }
+.repeat-enter-setup, .repeat-leave-setup {
+  -webkit-transition:all linear 0.3s;
+  -moz-transition:all linear 0.3s;
+  -ms-transition:all linear 0.3s;
+  -o-transition:all linear 0.3s;
+  transition:all linear 0.3s;
+}
 
 th.participant_name {
   width: 40%;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .add_participants {
@@ -28,12 +35,12 @@ th.participant_name {
   margin-right: auto;
   width: 33%;
   input {
-    width: 200px;
+    width: 263px;
   }
 }
 
 .start_pairing {
-  width: 50%;
+  width: 33%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;

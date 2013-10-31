@@ -35,7 +35,12 @@ angular.module('pairingbingoApp')
 
     $scope.loadFromStorage = function(){
       var storage = $window["localStorage"];
-      //$scope.participants = storage["participants"] || [];
+
+      if(storage["participants"]) {
+        $scope.participants = (storage["participants"]).split(",")
+      }
+
+      $scope.pairIt();
     }
 
     $scope.$on('$viewContentLoaded', $scope.loadFromStorage);
